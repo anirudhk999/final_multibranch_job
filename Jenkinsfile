@@ -34,6 +34,12 @@ pipeline {
             }
         }
 
+        stage('Run App.java') {
+            steps {
+                bat 'java -cp target\\classes sortingalgo.App'
+            }
+        }
+
         stage('Setup Python')
         {
             steps{
