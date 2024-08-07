@@ -13,7 +13,7 @@ pipeline {
         SONAR_SCANNER_HOME = tool 'SonarQube Scanner'
         SONAR_PROJECT_KEY = 'anirudhk999'
         SONAR_ORG = 'anirudhk999'
-        SONAR_TOKEN = credentials('Secret text')
+        SONAR_TOKEN = credentials('79897aa8-86ef-4c7e-a9fe-3117fe626b4f')
     }
 
  
