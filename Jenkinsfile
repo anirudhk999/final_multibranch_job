@@ -33,6 +33,39 @@ pipeline {
                 bat 'mvn test'
             }
         }
+
+        stage('Setup Python')
+        {
+            steps{
+                bat 'python -m venv venv2'
+                bat '.\\venv2\\Scripts\\activate'
+            }
+        }
+        
+        stage('Install All Dependencies')
+        {
+            steps{
+                bat 'pip install -r "requirements.txt"'
+            }
+        }
+        
+        stage('Run Python Script')
+        {
+            steps
+            {
+                bat 'python stats.py'
+            }
+        }
+ 
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         withSonarQubeEnv('SonarQube') {
+        //             sh 'mvn sonar:sonar'
+        //         }
+        //     }
+        // }
+
+
  
         stage('Merge to Master') {
             when {
