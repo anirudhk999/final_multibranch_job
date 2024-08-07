@@ -91,6 +91,7 @@ pipeline {
     {
         always
         {
+            bat '.\\venv2\\Scripts\\deactivate'
             cleanWs()
         }
         failure {
