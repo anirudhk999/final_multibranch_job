@@ -9,7 +9,7 @@ def extract_stats(file):
 def plotgraph(stats):
     if os.path.exists('C:\\DEVOPS_ASSESMENT\\GRAPH\\stats.png'):
         os.remove('C:\\DEVOPS_ASSESMENT\\GRAPH\\stats.png')
-    algos = ['bubble', 'insertion', 'merge', 'quick', 'selection']
+    algos = ['bubble', 'insertion', 'selection']
     plt.figure(figsize=(10, 10))
     count = 0
     for key, value in stats.items():
