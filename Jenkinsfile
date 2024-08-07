@@ -32,6 +32,39 @@ pipeline {
                 bat 'mvn test'
             }
         }
+
+        stage('Setup Python')
+        {
+            steps{
+                bat 'python -m venv venv2'
+                bat '.\\venv2\\Scripts\\activate'
+            }
+        }
+        
+        stage('Install All Dependencies')
+        {
+            steps{
+                bat 'pip install -r "requirements.txt"'
+            }
+        }
+        
+        stage('Run Python Script')
+        {
+            steps
+            {
+                bat 'python stats.py'
+            }
+        }
+ 
+        // stage('SonarQube Analysis') {
+        //     steps {
+        //         withSonarQubeEnv('SonarQube') {
+        //             sh 'mvn sonar:sonar'
+        //         }
+        //     }
+        // }
+
+
  
         stage('Merge to Master') {
             when {
@@ -51,6 +84,8 @@ pipeline {
             }
         }
 
+
+
     }
 
     post
@@ -63,8 +98,8 @@ pipeline {
             script {
                 if (env.BRANCH_NAME == 'dev') {
                     emailext subject: "Build failed in Jenkins: ${currentBuild.fullDisplayName}",
-                             body: "Something is wrong with ${env.BRANCH_NAME} branch.\n\nCheck console output at ${env.BUILD_URL} to view the results.",
-                             to: "${env.DEVELOPERS_EMAIL}"
+                    body: "ERROR IN ${env.BRANCH_NAME} BRANCH.\n\n CONSOLE OUTPUT -  ${env.BUILD_URL}",
+                    to: "${env.DEVELOPERS_EMAIL}"
                 }
             }
         }
