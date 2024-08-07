@@ -78,7 +78,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                        def scannerHome = tool 'SonarQube Scanner'
+                        def scannerHome = tool name: 'SonarQube Scanner'
                         withSonarQubeEnv('SonarCloud') {
                             bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}"
                         }
