@@ -37,6 +37,14 @@ pipeline {
             }
         }
     }
+
+    post
+    {
+        alwyas
+        {
+            cleanWs()
+        }
+    }
 }
 
 
