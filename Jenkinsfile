@@ -8,7 +8,7 @@ pipeline {
 
 
      environment {
-        GIT_REPO = 'https://github.com/anirudhk999/java_sorting_algorithms'
+        GIT_REPO = 'https://github.com/anirudhk999/final_multibranch_job
         DEVELOPERS_EMAIL = 'developers@example.com'
     }
 

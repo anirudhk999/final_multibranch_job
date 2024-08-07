@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="sortingalgo.AppTest" time="0.049" tests="6" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="sortingalgo.AppTest" time="0.066" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\java_sorting_algorithms\java_sorting_algorithms\target\test-classes;C:\java_sorting_algorithms\java_sorting_algorithms\target\classes;C:\Users\40041223\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\40041223\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\DEVOPS_ASSESMENT\final_multibranch_job_dev\final_multibranch_job\target\test-classes;C:\DEVOPS_ASSESMENT\final_multibranch_job_dev\final_multibranch_job\target\classes;C:\Users\40041223\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\40041223\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -17,9 +17,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.16\bin"/>
-    <property name="sun.java.command" value="C:\Users\40041223\AppData\Local\Temp\surefire14967479387363181857\surefirebooter3690563564869606712.jar C:\Users\40041223\AppData\Local\Temp\surefire14967479387363181857 2024-08-05T17-12-57_201-jvmRun1 surefire1362365517381305368tmp surefire_05395755038245712503tmp"/>
+    <property name="sun.java.command" value="C:\Users\40041223\AppData\Local\Temp\surefire4083256844965240102\surefirebooter1289783604749158655.jar C:\Users\40041223\AppData\Local\Temp\surefire4083256844965240102 2024-08-07T17-08-08_841-jvmRun1 surefire2268617482858433145tmp surefire_03379049665011711774tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\java_sorting_algorithms\java_sorting_algorithms\target\test-classes;C:\java_sorting_algorithms\java_sorting_algorithms\target\classes;C:\Users\40041223\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\40041223\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\DEVOPS_ASSESMENT\final_multibranch_job_dev\final_multibranch_job\target\test-classes;C:\DEVOPS_ASSESMENT\final_multibranch_job_dev\final_multibranch_job\target\classes;C:\Users\40041223\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\40041223\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\40041223"/>
     <property name="user.language" value="en"/>
@@ -27,13 +27,13 @@
     <property name="java.version.date" value="2022-07-19"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-11.0.16"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\java_sorting_algorithms\java_sorting_algorithms"/>
+    <property name="basedir" value="C:\DEVOPS_ASSESMENT\final_multibranch_job_dev\final_multibranch_job"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\40041223\AppData\Local\Temp\surefire14967479387363181857\surefirebooter3690563564869606712.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\40041223\AppData\Local\Temp\surefire4083256844965240102\surefirebooter1289783604749158655.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.16+11-LTS-199"/>
@@ -48,7 +48,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\40041223\AppData\Local\Temp\"/>
     <property name="java.version" value="11.0.16"/>
-    <property name="user.dir" value="C:\java_sorting_algorithms\java_sorting_algorithms"/>
+    <property name="user.dir" value="C:\DEVOPS_ASSESMENT\final_multibranch_job_dev\final_multibranch_job"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
@@ -60,10 +60,8 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testMergeSort" classname="sortingalgo.AppTest" time="0.005"/>
-  <testcase name="shouldAnswerWithTrue" classname="sortingalgo.AppTest" time="0"/>
+  <testcase name="testMergeSort" classname="sortingalgo.AppTest" time="0.008"/>
   <testcase name="testSelectionSort" classname="sortingalgo.AppTest" time="0"/>
   <testcase name="testBubbleSort" classname="sortingalgo.AppTest" time="0"/>
   <testcase name="testInsertionSort" classname="sortingalgo.AppTest" time="0"/>
-  <testcase name="testQuickSort" classname="sortingalgo.AppTest" time="0"/>
 </testsuite>
