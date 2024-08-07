@@ -8,7 +8,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 /**
  * Hello world!
  *
@@ -57,6 +56,36 @@ public class App
         }
     }
  
+    public static void mergeSort(int[] arr, boolean reverse) {
+        if (arr.length > 1) {
+            int mid = arr.length / 2;
+            int[] left = Arrays.copyOfRange(arr, 0, mid);
+            int[] right = Arrays.copyOfRange(arr, mid, arr.length);
+ 
+            mergeSort(left, reverse);
+            mergeSort(right, reverse);
+ 
+            merge(arr, left, right, reverse);
+        }
+    }
+ 
+    private static void merge(int[] arr, int[] left, int[] right, boolean reverse) {
+        int i = 0, j = 0, k = 0;
+        while (i < left.length && j < right.length) {
+            if ((!reverse && left[i] <= right[j]) || (reverse && left[i] >= right[j])) {
+                arr[k++] = left[i++];
+            } else {
+                arr[k++] = right[j++];
+            }
+        }
+        while (i < left.length) {
+            arr[k++] = left[i++];
+        }
+        while (j < right.length) {
+            arr[k++] = right[j++];
+        }
+    }
+
    
  
     
@@ -96,9 +125,35 @@ public class App
         List<Double> bubbleSortAnalytics = new ArrayList<Double>();
         List<Double> selectionSortAnalytics = new ArrayList<Double>();
         List<Double> insertionSortAnalytics = new ArrayList<Double>();
+        List<Double> mergeSortAnalytics = new ArrayList<Double>();
 
         int MIN_LIST_LENGTH = 1000;
         int MAX_LIST_LENGTH = 10000;
+
+        //mergeSort
+        for(int i = MIN_LIST_LENGTH; i < MAX_LIST_LENGTH; i = i + 1000)
+        {
+            List<Integer> numbers = new ArrayList<>();
+
+            for (int j = 0; j < i; j++) {
+                numbers.add(j);
+            }
+
+            Collections.shuffle(numbers);
+            int[] nums = new int[numbers.size()];
+            for(int k = 0; k < numbers.size(); k++)
+            {
+                nums[k] = numbers.get(k);
+            }
+            
+            double start = (System.nanoTime()) / 1000 ;
+            mergeSort(nums, false);
+            double end = (System.nanoTime()) / 1000 ;
+            double elapsedTime = end - start;
+            mergeSortAnalytics.add(elapsedTime);
+        }
+
+        System.out.println(mergeSortAnalytics);
 
         //bubbleSort
         for(int i = MIN_LIST_LENGTH; i < MAX_LIST_LENGTH; i = i + 1000)
