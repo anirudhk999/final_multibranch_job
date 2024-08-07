@@ -10,6 +10,10 @@ pipeline {
     environment {
         GIT_REPO = 'https://github.com/anirudhk999/final_multibranch_job'
         DEVELOPERS_EMAIL = 'developers@example.com'
+        SONAR_SCANNER_HOME = tool 'SonarQube Scanner'
+        SONAR_PROJECT_KEY = 'anirudhk999'
+        SONAR_ORG = 'anirudhk999'
+        SONAR_TOKEN = credentials('sonarcloud-token')
     }
 
  
@@ -70,6 +74,27 @@ pipeline {
         //         }
         //     }
         // }
+
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                        def scannerHome = tool 'SonarQube Scanner'
+                        withSonarQubeEnv('SonarCloud') {
+                            bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}"
+                        }
+                    }
+                }
+        }
+ 
+        stage('Quality Gate') {
+            steps {
+                script {
+                    timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                    }
+                }
+            }
+        }
 
 
  
