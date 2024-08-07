@@ -59,6 +59,16 @@ pipeline {
         {
             cleanWs()
         }
+        failure {
+            script {
+                if (env.BRANCH_NAME == 'dev') {
+                    emailext subject: "Build failed in Jenkins: ${currentBuild.fullDisplayName}",
+                             body: "Something is wrong with ${env.BRANCH_NAME} branch.\n\nCheck console output at ${env.BUILD_URL} to view the results.",
+                             to: "${env.DEVELOPERS_EMAIL}"
+                }
+            }
+        }
+
     }
 }
 
