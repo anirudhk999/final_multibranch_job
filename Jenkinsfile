@@ -36,16 +36,22 @@ pipeline {
  
         stage('Merge to Master') {
             when {
-                // Only run this stage if all tests passed
-                expression { currentBuild.currentResult == 'SUCCESS' && currentBranch == 'dev'}
+                branch 'dev'
+                expression {
+                    return currentBuild.resultIsBetterOrEqualTo('SUCCESS')
+                }
             }
             steps {
-                // Merge dev to master
-                bat 'git checkout master'
-                bat 'git merge ' + currentBranch
-                bat 'git push origin master'
+                script {
+                    bat '''
+                    git checkout -f master
+                    git merge dev
+                    git push
+                    '''
+                }
             }
         }
+
     }
 
     post
