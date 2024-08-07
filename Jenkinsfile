@@ -1,14 +1,15 @@
 pipeline {
     agent any
  
-    // Get the current branch
-    def currentBranch = env.GIT_BRANCH
- 
+     environment {
+        GIT_REPO = 'https://github.com/anirudhk999/java_sorting_algorithms'
+        DEVELOPERS_EMAIL = 'developers@example.com'
+    }
+
     stages {
         stage('Checkout')
         {
-            // Checkout the current branch
-            git branch: currentBranch
+            git branch: "${BRANCH_NAME}", url: "${GIT_REPO}"
         }
         stage('Build') {
             steps {
@@ -27,7 +28,7 @@ pipeline {
         stage('Merge to Master') {
             when {
                 // Only run this stage if all tests passed
-                expression { currentBuild.currentResult == 'SUCCESS' && currentBranch == 'dev'}
+                expression { currentBuild.currentResult == 'SUCCESS' && env.GIT_BRANCH == 'dev'}
             }
             steps {
                 // Merge dev to master
