@@ -76,26 +76,26 @@ pipeline {
         //     }
         // }
 
-        // stage('SonarQube Analysis') {
-        //     steps {
-        //         script {
-        //                 def scannerHome = tool 'SonarQube Scanner'
-        //                 withSonarQubeEnv('sonarQube') {
-        //                     bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}"
-        //                 }
-        //             }
-        //         }
-        // }
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                        def scannerHome = tool 'SonarQube Scanner'
+                        withSonarQubeEnv('sonarQube') {
+                            bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_TOKEN}"
+                        }
+                    }
+                }
+        }
  
-        // stage('Quality Gate') {
-        //     steps {
-        //         script {
-        //             timeout(time: 1, unit: 'HOURS') {
-        //             waitForQualityGate abortPipeline: true
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Quality Gate') {
+            steps {
+                script {
+                    timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                    }
+                }
+            }
+        }
 
 
  
