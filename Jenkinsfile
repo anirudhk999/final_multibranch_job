@@ -11,7 +11,7 @@ pipeline {
     environment {
         GIT_REPO = 'https://github.com/anirudhk999/final_multibranch_job'
         DEVELOPERS_EMAIL = 'developers@example.com'
-        SONAR_SCANNER_HOME = tool name : 'SonarQube Scanner'
+        //SONAR_SCANNER_HOME = tool name : 'SonarQube Scanner'
         SONAR_PROJECT_KEY = 'anirudhk999'
         SONAR_ORG = 'anirudhk999'
         SONAR_TOKEN = credentials('79897aa8-86ef-4c7e-a9fe-3117fe626b4f')
