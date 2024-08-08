@@ -83,7 +83,6 @@ pipeline {
                 script {
                     bat '''
                     git checkout -f master
-                    git merge dev
                     '''
                 }
             }
