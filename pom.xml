@@ -41,11 +41,6 @@
           <version>3.0.2</version>
         </plugin>
         <plugin>
-               <groupId>org.apache.httpcomponents</groupId>
-               <artifactId>httpsclient</artifactId>
-               <version>4.5.3</version>
-            </plugin>
-        <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
         </plugin>
