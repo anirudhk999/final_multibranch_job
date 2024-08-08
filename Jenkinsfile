@@ -68,13 +68,13 @@ pipeline {
             }
         }
  
-        stage('SonarQube Analytics') {
-            steps {
-                withSonarQubeEnv('sonarQube') {
-                    bat 'mvn sonar:sonar'
-                }
-            }
-        }
+        // stage('SonarQube Analytics') {
+        //     steps {
+        //         withSonarQubeEnv('sonarQube') {
+        //             bat 'mvn sonar:sonar'
+        //         }
+        //     }
+        // }
 
         stage('SonarQube Analysis') {
             steps {
