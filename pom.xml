@@ -42,7 +42,7 @@
         </plugin>
         <plugin>
                <groupId>org.apache.httpcomponents</groupId>
-               <artifactId>httpclient</artifactId>
+               <artifactId>httpsclient</artifactId>
                <version>4.5.3</version>
             </plugin>
         <plugin>
