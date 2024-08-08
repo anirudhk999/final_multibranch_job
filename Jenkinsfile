@@ -84,7 +84,6 @@ pipeline {
                     bat '''
                     git checkout -f master
                     git merge dev
-                    git push
                     '''
                 }
             }
