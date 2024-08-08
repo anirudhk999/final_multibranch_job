@@ -81,8 +81,8 @@ pipeline {
                 script {
                         def scannerHome = tool 'SonarQube Scanner'
                         withSonarQubeEnv('sonarQube') {
-                            //bat "mvn sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url='https://sonarcloud.io' -Dsonar.login=${SONAR_TOKEN}"
-                            bat "mvn sonar:sonar -Dsonar.host.url= 'https://sonarcloud.io' -Dsonar.login=${SONAR_ORG} -Dsonar.password=${SONAR_TOKEN} -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.coverage.jacoco.xmlReportPaths=report-task.txt"
+                            bat "mvn sonar:sonar -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.organization=${SONAR_ORG} -Dsonar.host.url='https://sonarcloud.io' -Dsonar.login=${SONAR_TOKEN}"
+                            //bat "mvn sonar:sonar -Dsonar.host.url= 'https://sonarcloud.io' -Dsonar.login=${SONAR_ORG} -Dsonar.password=${SONAR_TOKEN} -Dsonar.projectKey=${SONAR_PROJECT_KEY} -Dsonar.coverage.jacoco.xmlReportPaths=report-task.txt"
                         }
                     }
                 }
